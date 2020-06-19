@@ -16,6 +16,8 @@
 		23CA6D0F2496AB1400D9B142 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23CA6D0D2496AB1400D9B142 /* LaunchScreen.storyboard */; };
 		23CA6D1A2496AB1400D9B142 /* blackoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA6D192496AB1400D9B142 /* blackoutTests.swift */; };
 		23CA6D252496AB1400D9B142 /* blackoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA6D242496AB1400D9B142 /* blackoutUITests.swift */; };
+		23CA6D332496AC3000D9B142 /* blackoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA6D322496AC3000D9B142 /* blackoutModel.swift */; };
+		23CA6D352496AC6200D9B142 /* blackoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA6D342496AC6200D9B142 /* blackoutViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		23CA6D202496AB1400D9B142 /* blackoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23CA6D242496AB1400D9B142 /* blackoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackoutUITests.swift; sourceTree = "<group>"; };
 		23CA6D262496AB1400D9B142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23CA6D322496AC3000D9B142 /* blackoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackoutModel.swift; sourceTree = "<group>"; };
+		23CA6D342496AC6200D9B142 /* blackoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackoutViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				23CA6D102496AB1400D9B142 /* Info.plist */,
 				23CA6D032496AB1200D9B142 /* blackout.xcdatamodeld */,
 				23CA6D0A2496AB1400D9B142 /* Preview Content */,
+				23CA6D322496AC3000D9B142 /* blackoutModel.swift */,
+				23CA6D342496AC6200D9B142 /* blackoutViewModel.swift */,
 			);
 			path = blackout;
 			sourceTree = "<group>";
@@ -271,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				23CA6D052496AB1200D9B142 /* blackout.xcdatamodeld in Sources */,
+				23CA6D332496AC3000D9B142 /* blackoutModel.swift in Sources */,
 				23CA6D002496AB1200D9B142 /* AppDelegate.swift in Sources */,
+				23CA6D352496AC6200D9B142 /* blackoutViewModel.swift in Sources */,
 				23CA6D072496AB1200D9B142 /* ContentView.swift in Sources */,
 				23CA6D022496AB1200D9B142 /* SceneDelegate.swift in Sources */,
 			);
