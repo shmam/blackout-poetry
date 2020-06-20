@@ -25,7 +25,7 @@ class blackoutApp: ObservableObject{
     to our model, we want to signal this to the view and then repaint everything in accordance to those updates
      */
     @Published private var model: blackoutModel = blackoutModel(
-        poem:"When they sold off the farm she took the child and caught a bus out of town—as for him, with everyone gone and everything grim, he opened a pint of bourbon, piled pictures, letters and clothes in the yard, doused them with kerosene, struck a match and watched as they burnt to ashes, watched and worked on his whiskey, working hard."
+        poem:"Several West End theaters are about to start major refurbishments, partly to increase the number of toilets. LONDON — The Theater Royal in Drury Lane — one of London’s most historic venues, tracing its origins back to 1663 — is closing this weekend for a $56 million refurbishment, in part to meet a very immediate need: for more women’s toilets (18, in this case)."
     )
     
     var markedAll : Bool = false
