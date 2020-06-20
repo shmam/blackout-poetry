@@ -21,10 +21,11 @@ struct ContentView: View {
             Text("blackout")
                 .font(.largeTitle)
                 .fontWeight(.black)
-                .strikethrough()
             
             TestWrappedLayout(wordArray: viewModel.words, viewModel: self.viewModel)
                 .padding()
+            
+            buttonView(viewModel: self.viewModel)
         }
     }
 }
@@ -53,6 +54,8 @@ struct WordView: View{
 struct TestWrappedLayout: View {
     var wordArray : Array<blackoutModel.Word>
     var viewModel: blackoutApp
+    
+    @GestureState private var location = CGPoint.zero
 
     var body: some View {
         GeometryReader { geometry in
@@ -93,15 +96,38 @@ struct TestWrappedLayout: View {
                     })
             }
         }
+        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .global)
+            .updating($location) { (value, state, transaction) in
+                state = value.location
+            }
+        )
     }
 
 }
 
 struct buttonView: View {
+    var viewModel: blackoutApp
+    
+    private func buttonFactory(label:String,actionFunc: @escaping ()->Void) -> some View{
+        return ZStack{
+            RoundedRectangle(cornerRadius: 25)
+                .foregroundColor(.black)
+            Button(action: actionFunc) {
+                Text(label)
+                    .foregroundColor(.white)
+                    .fontWeight(.heavy)
+            }
+        }
+        .frame(height:40)
+        .padding(.horizontal, 5)
+    }
+
     var body: some View{
         HStack{
-            Button(Text("export"))
-        }
+            self.buttonFactory(label: "Refesh", actionFunc: self.viewModel.newpoem)
+            self.buttonFactory(label: "Export", actionFunc: self.viewModel.export)
+            self.buttonFactory(label: "Mark all", actionFunc: self.viewModel.markall)
+        }.padding()
     }
 }
 

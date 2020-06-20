@@ -24,6 +24,11 @@ struct blackoutModel {
         self.words[markedWordIndex].isMarked = !self.words[markedWordIndex].isMarked
     }
     
+    mutating func mark(word: Word, value: Bool) -> Void{
+        let markedWordIndex = indexOf(of: word)
+        self.words[markedWordIndex].isMarked = value
+    }
+    
     func indexOf(of searchableWord: Word) -> Int {
         for currentIndex in 0..<words.count {
             if searchableWord.id == words[currentIndex].id{

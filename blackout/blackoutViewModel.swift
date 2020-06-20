@@ -25,8 +25,10 @@ class blackoutApp: ObservableObject{
     to our model, we want to signal this to the view and then repaint everything in accordance to those updates
      */
     @Published private var model: blackoutModel = blackoutModel(
-        poem:"Proin facilisis iaculis sapien, nec dictum ipsum iaculis eget. Sed urna ligula, congue vel sapien cursus, pulvinar porttitor odio. Phasellus commodo et nulla vel imperdiet. In ex orci, mollis sit amet congue a, volutpat et leo. Mauris at aliquet diam. Proin augue metus, interdum vel ultrices vel, varius quis ligula. Aenean metus odio, interdum ut tristique sed, facilisis at diam. Proin posuere mollis diam, vel pellentesque metus suscipit sollicitudin. Vivamus in risus tempus, efficitur neque vitae, fermentum velit. Donec ac sem orci. Nullam suscipit luctus lorem, et vehicula massa laoreet nec. Donec sagittis vitae sapien eget egestas. Sed posuere at massa sed laoreet. Cras consequat, turpis eu sodales lobortis, massa ante lobortis nunc, quis efficitur ligula nisl id velit. Nulla id pretium diam. Nullam vel libero eget felis dapibus tristique."
+        poem:"When they sold off the farm she took the child and caught a bus out of town—as for him, with everyone gone and everything grim, he opened a pint of bourbon, piled pictures, letters and clothes in the yard, doused them with kerosene, struck a match and watched as they burnt to ashes, watched and worked on his whiskey, working hard."
     )
+    
+    var markedAll : Bool = false
         
     // MARK: - access to model content
     
@@ -52,7 +54,20 @@ class blackoutApp: ObservableObject{
     /**
     This is to be used later to save the poem that was made as plaintext
     */
-    func export(){
+    func export() -> Void{
         print(model.export())
+//        TODO: Do something with this
+    }
+    
+    func markall() -> Void{
+        
+        self.markedAll = !self.markedAll
+        for eachWord in words {
+            model.mark(word: eachWord, value: self.markedAll)
+        }
+    }
+    
+    func newpoem() -> Void{
+        print("fetch new poem")
     }
 }
