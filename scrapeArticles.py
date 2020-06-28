@@ -4,7 +4,7 @@ import os
 
 # getting my NYT app API key from env variables 
 API_KEY = os.environ["API_KEY"]
-JSON_FILENAME = "data.json"
+JSON_FILENAME = "blackout/data.json"
 
 #array of articles 
 arr = []
@@ -13,7 +13,7 @@ arr = []
 for year in range(2005,2006):
     
     # from the months march to april	
-    for month in range(3,5):
+    for month in range(1,12):
         
         # get all of the articles published for that given month and year 		
         r = requests.get("https://api.nytimes.com/svc/archive/v1/{0}/{1}.json?api-key={2}".format(year,month,API_KEY))
@@ -25,7 +25,9 @@ for year in range(2005,2006):
             # snippet
             for d in data["response"]["docs"]:
                 article = d["lead_paragraph"] + " " + d["snippet"]
-                arr.append(article)
+                
+                if len(article) < 1000 and len(article) > 300:
+                    arr.append(article)
         except: 
             ...
         

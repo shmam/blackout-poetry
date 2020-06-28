@@ -24,9 +24,7 @@ class blackoutApp: ObservableObject{
     Adding the @Published property wrapper to our model variable to signal that when anything changes
     to our model, we want to signal this to the view and then repaint everything in accordance to those updates
      */
-    @Published private var model: blackoutModel = blackoutModel(
-        poem:"Several West End theaters are about to start major refurbishments, partly to increase the number of toilets. LONDON — The Theater Royal in Drury Lane — one of London’s most historic venues, tracing its origins back to 1663 — is closing this weekend for a $56 million refurbishment, in part to meet a very immediate need: for more women’s toilets (18, in this case)."
-    )
+    @Published private var model: blackoutModel = blackoutModel()
     
     var markedAll : Bool = false
         
@@ -68,6 +66,7 @@ class blackoutApp: ObservableObject{
     }
     
     func newpoem() -> Void{
-        print("fetch new poem")
+        self.model.newPoem()
+        print("new poem")
     }
 }
